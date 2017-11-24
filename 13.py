@@ -15,9 +15,7 @@ digits = '123456789'
 
 
 def isEncoded(text):
-    if digits.__contains__(text[1]):
-        return True
-    return False
+    return text[1] in digits
 
 
 def decode(text):
@@ -31,7 +29,6 @@ def decode(text):
 
 
 def encode(text):
-    print(isEncoded(text))
     result_string = ''
     count = 1
 
