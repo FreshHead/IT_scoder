@@ -15,8 +15,10 @@
 """
 x = []
 length = 10
+
 for i in range(length):
     x += [int(input('Enter a number: '))]
+
 print(x)
 
 while length > 1:
@@ -26,4 +28,5 @@ while length > 1:
             x[i + 1] = x[i] - x[i + 1]
             x[i] = x[i] - x[i + 1]
     length -= 1
+
 print(x)

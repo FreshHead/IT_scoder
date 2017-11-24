@@ -42,6 +42,7 @@ def encode(text):
 
 
 text = input('Введите текст для архивации/деархивации:\n')
+
 if isEncoded(text):
     print(decode(text))
 else:

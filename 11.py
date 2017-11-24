@@ -25,6 +25,7 @@ precision = float(input('Введите точность решения:'))
 start = -1000
 end = 1000
 length = end - start
+
 while length > precision:
     print(length, precision)
     yi = equation(end)
@@ -36,6 +37,7 @@ while length > precision:
     if yi < 0:
         start = end
         end += length
+
 if yi == 0:
     print("Корень уравнения - ", end)
 else:

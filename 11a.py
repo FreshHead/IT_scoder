@@ -16,6 +16,7 @@ end = 1000
 xi = end
 yi = math.inf
 length = get_length(start, end)
+
 while length > precision:
     print(length, precision)
     temp = test_equation(xi)
@@ -24,4 +25,5 @@ while length > precision:
         xi -= length
     else:
         xi += length
+
 print(xi)

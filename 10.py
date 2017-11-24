@@ -6,15 +6,17 @@
 
 Если чисел не остается, то компьютер должен сказать, что мы мухлюем. :)
 """
+
+
 def game():
     min = int(input('Введите самое маленькое число диапазона: '))
     max = int(input('Введите самое большое число диапазона: '))
-
     input('Загадайте число и нажмите любую клавишу')
+
     while min != max:
         range = max - min
         guess = int(min + range / 2)
-        answer = input( 'Это ' + str(guess) + '? (</>/=)')
+        answer = input('Это ' + str(guess) + '? (</>/=)')
 
         if answer == '<':
             max = guess
@@ -25,5 +27,6 @@ def game():
             return 0
 
     print('Вы мухлюете. Больше возможных чисел не осталось.')
+
 
 game()

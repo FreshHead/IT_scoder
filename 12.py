@@ -15,6 +15,7 @@ latin_cyrillic = {
 
 text = input('Введите текст для перевода:')
 result_text = ''
+
 for character in text:
     if latin_cyrillic.get(character)is not None:
         result_text += latin_cyrillic.get(character)

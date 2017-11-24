@@ -1,9 +1,8 @@
-'''
+"""
 Задание 5. Посчитать факториал. Рекурсивно.
 Спросить у пользователя число n.
 Напечатать n! (факториал числа n).
-'''
-input = int(input('Enter a number: '))
+"""
 
 
 def factorial(number):
@@ -12,4 +11,5 @@ def factorial(number):
     return 1
 
 
+number = int(input('Enter a number: '))
 print(factorial(input))
