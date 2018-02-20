@@ -14,8 +14,13 @@
 Усложнение 4. В строке могут быть скобки (разумеется, в первую очередь считается результат в скобках). Глубина вложенности скобок может быть любой )
 """
 
+import doctest
 
 def pop_operand(string):
+    """
+    >>>pop_operand('+10')
+    '+'
+    """
     pass
 
 
@@ -29,7 +34,7 @@ def evaluate(first_operand, operator, second_operand):
 expression = input('Введите выражение для вычисления:\n')
 result = pop_operand(expression)
 
-while expression != '':
-    result = evaluate(result, pop_operator(expression), pop_operand(expression))
+# while expression != '':
+#     result = evaluate(result, pop_operator(expression), pop_operand(expression))
 
 print("Result is: ", result)

@@ -22,7 +22,6 @@ def factorial(number):
 
 if __name__ == "__main__":
     import doctest
-
     doctest.testmod()
 
 user_input = int(input('Enter a number: '))
