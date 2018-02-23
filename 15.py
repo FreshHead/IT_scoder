@@ -37,6 +37,12 @@ def pop_operator(string):
 
 
 def evaluate(first_operand, operator, second_operand):
+    """
+    >>> evaluate(10, '+', 20)
+    30
+    >>> evaluate(100, '-', 19)
+    81
+    """
     pass
 
 
