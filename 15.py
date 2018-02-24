@@ -43,16 +43,20 @@ def evaluate(first_operand, operator, second_operand):
     >>> evaluate(100, '-', 19)
     81
     """
+    if operator == '+':
+        return first_operand + second_operand
+    elif operator == '-':
+        return first_operand - second_operand
     pass
 
 
-expression = input('Введите выражение для вычисления:\n')
-result = pop_operand(expression)
+# expression = input('Введите выражение для вычисления:\n')
+# result = pop_operand(expression)
 
 # while expression != '':
 #     result = evaluate(result, pop_operator(expression), pop_operand(expression))
 
-print("Result is: ", result)
+# print("Result is: ", result)
 
 if __name__ == "__main__":
     import doctest
