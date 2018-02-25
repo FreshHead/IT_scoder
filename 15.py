@@ -27,13 +27,17 @@ def pop_operand(string):
 
 def pop_operator(string):
     """
-    >>> pop_operator('+10')
+    >>> string = '+10'
+    >>> pop_operator(string)
     '+'
+    >>> string == '10'
+    True
     """
     operator = string[0]
     if operator == '+' or operator == '-':
+        result = string[0]
         string = string[1:]
-        return string[0]
+        return result
 
 
 def evaluate(first_operand, operator, second_operand):
