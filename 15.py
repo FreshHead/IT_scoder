@@ -15,43 +15,45 @@
 """
 
 
-def pop_operand(string):
-    """
-    >>> pop_operand('2+10')
-    2
-    >>> pop_operand('102-10')
-    102
-    """
-    pass
+class Evaluator:
+    def __init__(self, expression):
+        self.expression = expression
 
+    def pop_operand(self):
+        """
+        >>> evaluator = Evaluator('102-10')
+        >>> evaluator.pop_operand('2+10')
+        2
+        >>> evaluator.pop_operand('102-10')
+        102
+        """
+        pass
 
-def pop_operator(string):
-    """
-    >>> string = '+10'
-    >>> pop_operator(string)
-    '+'
-    >>> string == '10'
-    True
-    """
-    operator = string[0]
-    if operator == '+' or operator == '-':
-        result = string[0]
-        string = string[1:]
-        return result
+    def pop_operator(self):
+        """
+        >>> evaluator = Evaluator('+10')
+        >>> evaluator.pop_operator()
+        '+'
+        >>> evaluator.expression == '10'
+        True
+        """
+        operator = self.expression[0]
+        if operator == '+' or operator == '-':
+            self.expression = self.expression[1:]
+            return operator
 
-
-def evaluate(first_operand, operator, second_operand):
-    """
-    >>> evaluate(10, '+', 20)
-    30
-    >>> evaluate(100, '-', 19)
-    81
-    """
-    if operator == '+':
-        return first_operand + second_operand
-    elif operator == '-':
-        return first_operand - second_operand
-    pass
+    def evaluate(self, first_operand, operator, second_operand):
+        """
+        >>> evaluate(10, '+', 20)
+        30
+        >>> evaluate(100, '-', 19)
+        81
+        """
+        if operator == '+':
+            return first_operand + second_operand
+        elif operator == '-':
+            return first_operand - second_operand
+        pass
 
 
 # expression = input('Введите выражение для вычисления:\n')
