@@ -14,7 +14,6 @@
 Усложнение 4. В строке могут быть скобки (разумеется, в первую очередь считается результат в скобках). Глубина вложенности скобок может быть любой )
 """
 
-
 class Evaluator:
     def __init__(self, expression):
         self.expression = expression
@@ -22,11 +21,13 @@ class Evaluator:
     def pop_operand(self):
         """
         >>> evaluator = Evaluator('102-10')
-        >>> evaluator.pop_operand('2+10')
-        2
-        >>> evaluator.pop_operand('102-10')
+        >>> evaluator.pop_operand()
         102
         """
+        import re
+        operand = re.split('[-+]', self.expression, 1)[0]
+        self.expression = self.expression[len(operand):]
+        return int(operand)
         pass
 
     def pop_operator(self):
