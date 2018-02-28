@@ -14,13 +14,28 @@
 Усложнение 4. В строке могут быть скобки (разумеется, в первую очередь считается результат в скобках). Глубина вложенности скобок может быть любой )
 """
 
-class Evaluator:
+
+def evaluate(first_operand, operator, second_operand):
+    """
+    >>> evaluate(10, '+', 20)
+    30
+    >>> evaluate(100, '-', 19)
+    81
+    """
+    if operator == '+':
+        return first_operand + second_operand
+    elif operator == '-':
+        return first_operand - second_operand
+    pass
+
+
+class Expression:
     def __init__(self, expression):
         self.expression = expression
 
     def pop_operand(self):
         """
-        >>> evaluator = Evaluator('102-10')
+        >>> evaluator = Expression('102-10')
         >>> evaluator.pop_operand()
         102
         """
@@ -32,7 +47,7 @@ class Evaluator:
 
     def pop_operator(self):
         """
-        >>> evaluator = Evaluator('+10')
+        >>> evaluator = Expression('+10')
         >>> evaluator.pop_operator()
         '+'
         >>> evaluator.expression == '10'
@@ -42,19 +57,6 @@ class Evaluator:
         if operator == '+' or operator == '-':
             self.expression = self.expression[1:]
             return operator
-
-    def evaluate(self, first_operand, operator, second_operand):
-        """
-        >>> evaluate(10, '+', 20)
-        30
-        >>> evaluate(100, '-', 19)
-        81
-        """
-        if operator == '+':
-            return first_operand + second_operand
-        elif operator == '-':
-            return first_operand - second_operand
-        pass
 
 
 # expression = input('Введите выражение для вычисления:\n')
