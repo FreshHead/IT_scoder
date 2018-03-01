@@ -30,8 +30,8 @@ def evaluate(first_operand, operator, second_operand):
 
 
 class Expression:
-    def __init__(self, expression):
-        self.expression = expression
+    def __init__(self, string):
+        self.string = string
 
     def pop_operand(self):
         """
@@ -40,8 +40,8 @@ class Expression:
         102
         """
         import re
-        operand = re.split('[-+]', self.expression, 1)[0]
-        self.expression = self.expression[len(operand):]
+        operand = re.split('[-+]', self.string, 1)[0]
+        self.string = self.string[len(operand):]
         return int(operand)
         pass
 
@@ -50,22 +50,22 @@ class Expression:
         >>> evaluator = Expression('+10')
         >>> evaluator.pop_operator()
         '+'
-        >>> evaluator.expression == '10'
+        >>> evaluator.string == '10'
         True
         """
-        operator = self.expression[0]
+        operator = self.string[0]
         if operator == '+' or operator == '-':
-            self.expression = self.expression[1:]
+            self.string = self.string[1:]
             return operator
 
 
-# expression = input('Введите выражение для вычисления:\n')
-# result = pop_operand(expression)
+expression = Expression(input('Введите выражение для вычисления:\n'))
+result = expression.pop_operand()
 
-# while expression != '':
-#     result = evaluate(result, pop_operator(expression), pop_operand(expression))
+while expression.string != '':
+    result = evaluate(result, expression.pop_operator(), expression.pop_operand())
 
-# print("Result is: ", result)
+print("Result is: ", result)
 
 if __name__ == "__main__":
     import doctest
