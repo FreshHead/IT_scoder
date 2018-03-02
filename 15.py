@@ -16,6 +16,10 @@
 
 
 def evaluate(expression_queue):
+    """
+    >>> evaluate(ExpressionQueue('10+2-7'))
+    5
+    """
     result = expression_queue.pop_operand()
     while expression_queue.expression_string != '':
         result = evaluate_simple(result, expression_queue.pop_operator(), expression_queue.pop_operand())
