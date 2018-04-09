@@ -13,7 +13,7 @@ def solution():
     """
     total = 0
     for n in range(1, 3000000):
-        total += n * (2 * n * n + 3 * n + 4)
+        total += n * (n * (2 * n + 3) + 4)
     print('total =', total)
 
 
