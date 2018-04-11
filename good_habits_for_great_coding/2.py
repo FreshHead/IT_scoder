@@ -1,21 +1,18 @@
 import random
 
 
-def find_random_zeroed(x, x_mutated):
-    """
-    """
-    z = set(x) - set(x_mutated)
-    print(z)
+def find_random_zeroed(x):
+    z = set([number for number in range(1, 100)]) -set(x)
+    print(z.pop())
 
 
 def answer_from_book(x):
-    print(5050-sum(x))
+    print(5050 - sum(x))
+
 
 x = random.sample(range(1, 101), 100)
+x[random.randint(1, 100)] = 0
 print(x)
-y = x.copy()
-y[random.randint(1, 100)] = 0
-print(y)
-find_random_zeroed(x, y)
+find_random_zeroed(x)
 
-answer_from_book(y)
+answer_from_book(x)
