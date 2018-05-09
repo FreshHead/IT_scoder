@@ -33,6 +33,7 @@ def print_pascal_triangle():
     for line in pascal_triangle:
         print(line)
 
+
 if __name__ == '__main__':
     from time import clock
 

@@ -2,7 +2,7 @@ import random
 
 
 def find_random_zeroed(x):
-    z = set([number for number in range(1, 100)]) -set(x)
+    z = set([number for number in range(1, 100)]) - set(x)
     print(z.pop())
 
 
