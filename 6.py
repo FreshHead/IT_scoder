@@ -11,17 +11,33 @@
  1 5 10 10 5 1
 1 6 15 20 15 6 1
 """
-number = int(input('Enter a positive number: '))
-pascal_triangle = [[1, 1]]
 
-while len(pascal_triangle) < input:
-    line = [1]
-    line_number = len(pascal_triangle)
-    while len(line) < line_number + 1:
-        line += [pascal_triangle[-1][len(line) - 1] + pascal_triangle[-1][len(line)]]
 
-    line += [1]
-    pascal_triangle += [line]
+def main():
+    print_pascal_triangle()
 
-for line in pascal_triangle:
-    print(line)
+
+def print_pascal_triangle():
+    number = int(input('Enter a positive number: '))
+    pascal_triangle = [[1, 1]]
+
+    while len(pascal_triangle) < number:
+        line = [1]
+        line_number = len(pascal_triangle)
+        while len(line) < line_number + 1:
+            line += [pascal_triangle[-1][len(line) - 1] + pascal_triangle[-1][len(line)]]
+
+        line += [1]
+        pascal_triangle += [line]
+
+    for line in pascal_triangle:
+        print(line)
+
+if __name__ == '__main__':
+    from time import clock
+
+    START_TIME = clock()
+    main()
+    print('\n+===<RUN TIME>===+')
+    print('|  %5f.2' % (clock() - START_TIME), 'seconds |')
+    print('+==================+')
