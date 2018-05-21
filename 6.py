@@ -12,7 +12,6 @@
 1 6 15 20 15 6 1
 """
 
-
 def main():
     print_pascal_triangle()
 
