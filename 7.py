@@ -14,9 +14,9 @@ for i in range(len(x)):
     x[i] = int(input('Enter a number: '))
 
 print(x)
-sum = 0
+total = 0
 
 for element in x:
-    sum += element
+    total += element
 
-print("Sum of the elements is", sum)
+print("Sum of the elements is", total)
