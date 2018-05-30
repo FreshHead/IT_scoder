@@ -11,8 +11,6 @@
 """
 
 
-def splitBy
-
 # def calculate(input_string):
 #     assert isinstance(input_string, str), "input must be string!"
 #     if input_string.isdigit():
